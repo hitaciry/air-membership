@@ -1,0 +1,106 @@
+html{
+  height: 100%;
+}
+body{
+  background: linear-gradient(45deg, rgba(3, 126, 243, 0.2) 20%,rgba(48, 195, 158, 0.2) 80% );
+  font-family: Lato;
+}
+.paper-md{
+  max-width:50vw ;
+  min-width: 300px;
+  margin: auto;
+}
+.content{
+  padding: 20px 20px 0px;
+}
+.color-blue{
+  background-color: #037ef3
+}
+
+.color-yellow{
+  background-color: #FFC845
+}
+
+.color-darkgray{
+  background-color: #52565E
+}
+
+.color-gray{
+  background-color: #CACCD1
+}
+
+.color-lightgray{
+  background-color: #F3F4F7
+}
+
+.color-orange{
+  background-color: #F48924
+}
+.color-prime{
+  background-color: #037ef3!important;
+  color:white!important
+}
+.color-gv{
+  background-color: #F85A40 !important;
+  color:white!important
+}
+
+.color-gt{
+  background-color: #0A8EA0!important;
+  color:white!important
+}
+
+.color-ge{
+  background-color: #30C39E!important;
+  color:white!important
+}
+
+.font-blue{
+  color: #037ef3
+}
+
+.font-yellow{
+  color: #FFC845
+}
+
+.font-darkgray{
+  color: #52565E
+}
+
+.font-gray{
+  color: #CACCD1
+}
+
+.font-lightgray{
+  color: #F3F4F7
+}
+
+.font-orange{
+  color: #F48924
+}
+.font-gv{
+  color: #F85A40
+}
+
+.font-gt{
+  color: #0A8EA0
+}
+
+.font-ge{
+  color: #30C39E
+}
+
+.gradient1{
+  background: linear-gradient(45deg, rgb(3, 126, 243) 30%,rgb(48, 195, 158) 70% );
+
+}
+
+.gradient2{
+  background: linear-gradient(45deg, #30C39E, #FFC845)
+}
+.gradient3{
+  background: linear-gradient(45deg,  #EF4573, #FFC845)
+}
+.gradient4{
+  background: linear-gradient(45deg, #EF4573, #BE3591)
+}
