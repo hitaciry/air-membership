@@ -1,8 +1,12 @@
 import React from 'react'
-import { Grid, Card, CardContent, Checkbox as Checkbox1, CardActions, Paper } from '@material-ui/core';
 
-import  {FavoriteBorder, Favorite } from '@material-ui/icons';
+import Grid from '@material-ui/core/Grid'
+import Paper from '@material-ui/core/Paper'
+import IconButton from '@material-ui/core/IconButton'
+
+import Edit from '@material-ui/icons/Edit';
 import colors from '../style/colors';
+import Avatar from '@material-ui/core/Avatar';
 
 const overlayStyle=(program)=>({
   
@@ -18,28 +22,30 @@ const overlayStyle=(program)=>({
   color:"white"
 })
 
-const CardView = ({opportunity,onUpdate}) => {
+const CardView = ({opportunity,onClick}) => {
   return (
-    <Grid item xs={12} sm={6} md={4} lg={3}>
+    <Grid item >
       <Paper style={{width:300, height:280}}>
         <div style={{backgroundImage:`url(${opportunity.cover_photo_urls})`, height:140}}>
          <div style={overlayStyle(opportunity.programmes.short_name)}>
-          <div style={{display:"flex", padding:10}}>
-            <div >
+          <div style={{display:"flex"}}>
+            <div style={{color:"white", padding:10}} >
               {opportunity.programmes.short_name}
             </div>
             <div style={{flex:1}}></div>
             <div >
-              <FavoriteBorder  />
+              <IconButton color="inherit" onClick={()=>onClick(opportunity.id)}>
+                <Edit/>
+              </IconButton>
             </div>
           </div>
-          <div style={{textAlign:"center",height:"80%",
-          verticalAlign: "middle"}}><div>{opportunity.title}</div></div>
+          <div style={{textAlign:"center",height:"80%", color:"white",
+          verticalAlign: "center"}}><div>{opportunity.title}</div></div>
          </div>
         </div>
         <div style={{display:"flex", padding:10}}>
-          <div style={{width:40,height:40,backgroundImage:`url(${opportunity.cover_photo_urls})`}} >icon</div> 
-          <div style={{flex:0.7}}>{opportunity.branch.organisation.name}</div>
+          <Avatar className={'color-'+opportunity.programmes.short_name.toLowerCase()}>{opportunity.branch.organisation.name[0]}</Avatar>
+          <div style={{flex:0.7,alignItems: "center",display: "flex",paddingLeft: 10}}>{opportunity.branch.organisation.name}</div>
           </div>  
           <div style={{display:"flex",padding:10}}>
           <div style={{flex:0.6}}>Location:<br/> {opportunity.location}</div>

@@ -13,6 +13,19 @@ const opportunitiesReducer=(state={opportunity:null}, action)=>{
       return{ ...state,
         opportunity:action.opportunity
       }
+    case "DISCARD_OPPORTUNITY":
+      return{ ...state,
+        opportunity:null
+      }
+    case "UPDATE_OPPORTUNITY":
+      return{ ...state,
+        opportunity:null,
+        opportunities:state.opportunities&&state.opportunities.map(opportunity=>{
+         return opportunity.id === action.opportunity.id?
+          {...opportunity,title:action.opportunity.title }
+          :opportunity 
+        })
+      }
     default:
       break;
   }

@@ -11,5 +11,15 @@ export const getOpprortunity=(id)=>{
 
 export const updateOpprortunity=(opportunity)=>{
   
-  return fetch(url+`/${opportunity.id}?`+token,{method:"PATCH",data:opportunity}).then(r=>r.json())
+  return fetch(url+`/${opportunity.id}?`+token,{
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method:"PATCH",
+    body:JSON.stringify({access_token:"dd0df21c8af5d929dff19f74506c4a8153d7acd34306b9761fd4a57cfa1d483c"
+                        ,opportunity:{...opportunity,
+                                      study_levels:opportunity.study_levels.map(s=>s.id)}
+                        })
+    }).then(r=>r.json())
 }
